@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hasil Keluaran Hongkong Lotto - Glorygame99</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -38,6 +39,7 @@
       padding: 20px;
       backdrop-filter: blur(10px);
       text-align: center;
+      overflow-x: auto; /* biar tabel tidak pecah di layar kecil */
     }
 
     table {
@@ -46,6 +48,7 @@
       margin-top: 10px;
       border-radius: 12px;
       overflow: hidden;
+      min-width: 300px; /* jaga biar tabel rapi */
     }
 
     thead tr {
@@ -66,14 +69,15 @@
     .date {
       font-weight: 900;
       color: #ffd60a;
-      font-size: 20px; /* angka PRIZE lebih besar */
+      font-size: 20px;
     }
 
-    /* Bola biliar */
+    /* Bola angka */
     .balls {
       display: flex;
       justify-content: center;
       gap: 12px;
+      flex-wrap: wrap;
     }
 
     .ball {
@@ -108,7 +112,7 @@
       font-size: 14px;
     }
 
-    /* Warna bola biliar standar */
+    /* Warna bola */
     .b0  { background: radial-gradient(circle at 30% 30%, #fff, #bbb); color: #000; }
     .b1  { background: radial-gradient(circle at 30% 30%, #ffcc00, #d4a600); }
     .b2  { background: radial-gradient(circle at 30% 30%, #0000ff, #000088); }
@@ -120,9 +124,12 @@
     .b8  { background: radial-gradient(circle at 30% 30%, #000000, #333333); }
     .b9  { background: radial-gradient(circle at 30% 30%, #ffcc00, #d4a600); }
 
-    /* Tombol umum */
+    /* Tombol */
     .btn {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
       margin: 15px auto 0;
       padding: 14px 28px;
       border: none;
@@ -134,6 +141,10 @@
       transition: all 0.3s ease;
       box-shadow: 0 6px 20px rgba(0,212,255,0.25);
       width: 220px;
+    }
+
+    .btn i {
+      font-size: 18px;
     }
 
     .btn:hover {
@@ -151,6 +162,17 @@
 
     .tg-btn {
       background: linear-gradient(90deg, #0088cc, #00d4ff);
+    }
+
+    /* Responsif untuk mobile */
+    @media (max-width: 600px) {
+      h1 { font-size: 22px; }
+      .tanggal { font-size: 14px; margin-bottom: 15px; }
+      th, td { padding: 8px; font-size: 14px; }
+      .date { font-size: 16px; }
+      .ball { width: 40px; height: 40px; font-size: 14px; }
+      .ball span { width: 20px; height: 20px; font-size: 12px; }
+      .btn { width: 100%; max-width: 280px; font-size: 14px; padding: 12px 18px; }
     }
   </style>
 </head>
@@ -204,9 +226,15 @@
     </table>
 
     <!-- Tombol -->
-    <button class="btn login-btn" onclick="window.location.href='https://glorygame99-jpe.xyz/'">LOGIN</button>
-    <button class="btn fb-btn" onclick="window.location.href='https://www.facebook.com/groups/situsgacorgg99/'">Facebook</button>
-    <button class="btn tg-btn" onclick="window.location.href='https://t.me/situsgacor_glorygame99'">Telegram</button>
+    <button class="btn login-btn" onclick="window.location.href='https://glorygame99-jpe.xyz/'">
+      <i class="fa-solid fa-right-to-bracket"></i> LOGIN
+    </button>
+    <button class="btn fb-btn" onclick="window.location.href='https://www.facebook.com/groups/situsgacorgg99/'">
+      <i class="fab fa-facebook-f"></i> Facebook
+    </button>
+    <button class="btn tg-btn" onclick="window.location.href='https://t.me/situsgacor_glorygame99'">
+      <i class="fab fa-telegram"></i> Telegram
+    </button>
   </div>
 </body>
 </html>
