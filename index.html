@@ -1,242 +1,236 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hasil Keluaran Hongkong Lotto - Glorygame99</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<style>
-  /* === BODY & BACKGROUND === */
-  body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    color: #fff;
-    padding: 20px;
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-                url('https://raw.githubusercontent.com/reyreygits/RESULTHONGKONGLOTTO/main/logo.png') no-repeat center center fixed;
-    background-size: cover;
-    background-position: center;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hasil Keluaran Hongkong Lotto - Glorygame99</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* === BODY & BACKGROUND === */
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(135deg, rgba(15,32,39,0.6), rgba(44,83,100,0.6)),
+                  url('https://raw.githubusercontent.com/reyreygits/RESULTHONGKONGLOTTO/main/logo.png1') no-repeat center center fixed;
+      background-size: contain;
+      background-position: center center;
+      background-attachment: fixed;
+    }
 
-  h1 {
-    text-align: center;
-    color: #ffd60a;
-    margin-bottom: 8px;
-    font-size: 32px;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.7);
-  }
+    h1 {
+      text-align: center;
+      color: #ffd60a;
+      margin-bottom: 5px;
+      font-size: 28px;
+    }
 
-  .tanggal {
-    text-align: center;
-    font-size: 18px;
-    margin-bottom: 30px;
-    color: #00eaff;
-    font-weight: 600;
-    text-shadow: 0 1px 5px rgba(0,255,255,0.4);
-  }
+    .tanggal {
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 25px;
+      color: #00eaff;
+      font-weight: 600;
+    }
 
-  /* === CARD === */
-  .card {
-    max-width: 900px;
-    margin: auto;
-    background: rgba(0, 0, 0, 0.25); /* lebih transparan, background terlihat */
-    border-radius: 20px;
-    padding: 25px;
-    text-align: center;
-    box-shadow: 0 8px 40px rgba(0,0,0,0.6);
-    backdrop-filter: blur(4px);
-    border: 1px solid rgba(255,255,255,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
+    /* === CARD === */
+    .card {
+      max-width: 900px;
+      margin: auto;
+      background: rgba(0, 0, 0, 0.15);
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      padding: 20px;
+      text-align: center;
+      overflow-x: auto;
+      backdrop-filter: blur(2px);
+      transition: all 0.3s ease;
+    }
 
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 50px rgba(0,0,0,0.7);
-  }
+    /* === TABEL === */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      border-radius: 12px;
+      overflow: hidden;
+      min-width: 300px;
+    }
 
-  /* === TABEL === */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    border-radius: 15px;
-    overflow: hidden;
-    background: rgba(255,255,255,0.05);
-    box-shadow: inset 0 0 10px rgba(255,255,255,0.05);
-    margin-bottom: 20px;
-  }
+    thead tr {
+      background: linear-gradient(90deg, #ffd60a, #ff9900);
+      color: #000;
+    }
 
-  thead tr {
-    background: linear-gradient(90deg, #ffd60a, #ff9900);
-    color: #000;
-  }
+    th, td {
+      padding: 14px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
 
-  th, td {
-    padding: 14px;
-    text-align: center;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-  }
+    tr:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
 
-  tr:hover {
-    background: rgba(255, 255, 255, 0.08);
-  }
+    .date {
+      font-weight: 900;
+      color: #ffd60a;
+      font-size: 20px;
+    }
 
-  .date {
-    font-weight: 700;
-    font-size: 20px;
-    color: #ffd60a;
-  }
+    /* === BOLA ANGKA === */
+    .balls {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
 
-  /* === BOLA ANGKA === */
-  .balls {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-  }
+    .ball {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 18px;
+      color: #fff;
+      transition: transform 0.3s ease;
+      box-shadow: inset -3px -3px 6px rgba(0,0,0,0.6), 
+                  inset 3px 3px 6px rgba(255,255,255,0.3),
+                  0 4px 10px rgba(0,0,0,0.5);
+    }
 
-  .ball {
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 18px;
-    color: #fff;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: inset -3px -3px 6px rgba(0,0,0,0.6), 
-                inset 3px 3px 6px rgba(255,255,255,0.3),
-                0 4px 10px rgba(0,0,0,0.5);
-  }
+    .ball:hover { transform: scale(1.1); }
 
-  .ball:hover { transform: scale(1.1); }
+    .ball span {
+      background: #fff;
+      color: #000;
+      border-radius: 50%;
+      width: 26px;
+      height: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
 
-  .ball span {
-    background: #fff;
-    color: #000;
-    border-radius: 50%;
-    width: 26px;
-    height: 26px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-  }
+    /* Warna bola */
+    .b0  { background: radial-gradient(circle at 30% 30%, #fff, #bbb); color: #000; }
+    .b1  { background: radial-gradient(circle at 30% 30%, #ffcc00, #d4a600); }
+    .b2  { background: radial-gradient(circle at 30% 30%, #0000ff, #000088); }
+    .b3  { background: radial-gradient(circle at 30% 30%, #ff0000, #880000); }
+    .b4  { background: radial-gradient(circle at 30% 30%, #800080, #400040); }
+    .b5  { background: radial-gradient(circle at 30% 30%, #ff6600, #993300); }
+    .b6  { background: radial-gradient(circle at 30% 30%, #006400, #003300); }
+    .b7  { background: radial-gradient(circle at 30% 30%, #800000, #400000); }
+    .b8  { background: radial-gradient(circle at 30% 30%, #000000, #333333); }
+    .b9  { background: radial-gradient(circle at 30% 30%, #ffcc00, #d4a600); }
 
-  /* Warna bola */
-  .b0  { background: radial-gradient(circle at 30% 30%, #fff, #bbb); color: #000; }
-  .b1  { background: radial-gradient(circle at 30% 30%, #ffcc00, #d4a600); }
-  .b2  { background: radial-gradient(circle at 30% 30%, #0000ff, #000088); }
-  .b3  { background: radial-gradient(circle at 30% 30%, #ff0000, #880000); }
-  .b4  { background: radial-gradient(circle at 30% 30%, #800080, #400040); }
-  .b5  { background: radial-gradient(circle at 30% 30%, #ff6600, #993300); }
-  .b6  { background: radial-gradient(circle at 30% 30%, #006400, #003300); }
-  .b7  { background: radial-gradient(circle at 30% 30%, #800000, #400000); }
-  .b8  { background: radial-gradient(circle at 30% 30%, #000000, #333333); }
-  .b9  { background: radial-gradient(circle at 30% 30%, #ffcc00, #d4a600); }
+    /* === Tombol === */
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 15px auto 0;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 12px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 20px rgba(0,212,255,0.25);
+      width: 220px;
+    }
 
-  /* === Tombol === */
-  .btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin: 15px auto 0;
-    padding: 14px 28px;
-    border: none;
-    border-radius: 12px;
-    color: #fff;
-    font-weight: 700;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 6px 20px rgba(0,212,255,0.25);
-    width: 220px;
-  }
+    .btn i { font-size: 18px; }
 
-  .btn i { font-size: 18px; }
+    .btn:hover {
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 8px 25px rgba(127,92,255,0.35);
+    }
 
-  .btn:hover {
-    transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 8px 25px rgba(127,92,255,0.35);
-  }
+    .login-btn { background: linear-gradient(90deg, #7f5cff, #00d4ff); }
+    .fb-btn { background: linear-gradient(90deg, #1877f2, #00aaff); }
+    .tg-btn { background: linear-gradient(90deg, #0088cc, #00d4ff); }
 
-  .login-btn { background: linear-gradient(90deg, #7f5cff, #00d4ff); }
-  .fb-btn { background: linear-gradient(90deg, #1877f2, #00aaff); }
-  .tg-btn { background: linear-gradient(90deg, #0088cc, #00d4ff); }
-
-  /* === Responsif Mobile === */
-  @media (max-width: 600px) {
-    h1 { font-size: 22px; }
-    .tanggal { font-size: 14px; margin-bottom: 15px; }
-    th, td { padding: 8px; font-size: 14px; }
-    .date { font-size: 16px; }
-    .ball { width: 40px; height: 40px; font-size: 14px; }
-    .ball span { width: 20px; height: 20px; font-size: 12px; }
-    .btn { width: 100%; max-width: 280px; font-size: 14px; padding: 12px 18px; }
-  }
-</style>
+    /* === Responsif Mobile === */
+    @media (max-width: 600px) {
+      h1 { font-size: 22px; }
+      .tanggal { font-size: 14px; margin-bottom: 15px; }
+      th, td { padding: 8px; font-size: 14px; }
+      .date { font-size: 16px; }
+      .ball { width: 40px; height: 40px; font-size: 14px; }
+      .ball span { width: 20px; height: 20px; font-size: 12px; }
+      .btn { width: 100%; max-width: 280px; font-size: 14px; padding: 12px 18px; }
+    }
+  </style>
 </head>
 <body>
-<h1>Hasil Keluaran Hongkong Lotto</h1>
-<div class="tanggal">Tanggal: 17-09-2025</div>
+  <h1>Hasil Keluaran Hongkong Lotto</h1>
+  <div class="tanggal">Tanggal: 17-09-2025</div>
 
-<div class="card">
-  <table>
-    <thead>
-      <tr>
-        <th>PRIZE</th>
-        <th>Angka Keluaran</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="date">01</td>
-        <td>
-          <div class="balls">
-            <div class="ball b1"><span>1</span></div>
-            <div class="ball b2"><span>2</span></div>
-            <div class="ball b3"><span>3</span></div>
-            <div class="ball b4"><span>4</span></div>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td class="date">02</td>
-        <td>
-          <div class="balls">
-            <div class="ball b5"><span>5</span></div>
-            <div class="ball b6"><span>6</span></div>
-            <div class="ball b7"><span>7</span></div>
-            <div class="ball b8"><span>8</span></div>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td class="date">03</td>
-        <td>
-          <div class="balls">
-            <div class="ball b9"><span>9</span></div>
-            <div class="ball b0"><span>0</span></div>
-            <div class="ball b1"><span>1</span></div>
-            <div class="ball b2"><span>2</span></div>
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="card">
+    <table>
+      <thead>
+        <tr>
+          <th>PRIZE</th>
+          <th>Angka Keluaran</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="date">01</td>
+          <td>
+            <div class="balls">
+              <div class="ball b1"><span>1</span></div>
+              <div class="ball b2"><span>2</span></div>
+              <div class="ball b3"><span>3</span></div>
+              <div class="ball b4"><span>4</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="date">02</td>
+          <td>
+            <div class="balls">
+              <div class="ball b5"><span>5</span></div>
+              <div class="ball b6"><span>6</span></div>
+              <div class="ball b7"><span>7</span></div>
+              <div class="ball b8"><span>8</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="date">03</td>
+          <td>
+            <div class="balls">
+              <div class="ball b9"><span>9</span></div>
+              <div class="ball b0"><span>0</span></div>
+              <div class="ball b1"><span>1</span></div>
+              <div class="ball b2"><span>2</span></div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
-  <button class="btn login-btn" onclick="window.location.href='https://glorygame99-jpe.xyz/'">
-    <i class="fa-solid fa-right-to-bracket"></i> LOGIN
-  </button>
-  <button class="btn fb-btn" onclick="window.location.href='https://www.facebook.com/groups/togelglorygame99/'">
-    <i class="fab fa-facebook-f"></i> Facebook
-  </button>
-  <button class="btn tg-btn" onclick="window.location.href='https://t.me/situsgacor_glorygame99'">
-    <i class="fab fa-telegram"></i> Telegram
-  </button>
-</div>
+    <!-- Tombol -->
+    <button class="btn login-btn" onclick="window.location.href='https://glorygame99-jpe.xyz/'">
+      <i class="fa-solid fa-right-to-bracket"></i> LOGIN
+    </button>
+    <button class="btn fb-btn" onclick="window.location.href='https://www.facebook.com/groups/togelglorygame99/'">
+      <i class="fab fa-facebook-f"></i> Facebook
+    </button>
+    <button class="btn tg-btn" onclick="window.location.href='https://t.me/situsgacor_glorygame99'">
+      <i class="fab fa-telegram"></i> Telegram
+    </button>
+  </div>
 </body>
 </html>
