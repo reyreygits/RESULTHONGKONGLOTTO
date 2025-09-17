@@ -1,4 +1,3 @@
-<!-- Kode full HTML dengan kotak acak 4 bola billiard 0-9 -->
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -167,6 +166,22 @@
   }
 
   .random-box h2 { color: #ffd60a; margin-bottom: 15px; }
+
+  /* Kotak untuk setiap bola */
+  .slot {
+    width: 65px;
+    height: 65px;
+    border: 2px solid #ffd60a;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+    background: rgba(0,0,0,0.25);
+  }
+  .random-box .balls {
+    justify-content: center;
+  }
 </style>
 </head>
 <body>
@@ -174,6 +189,7 @@
 <div class="tanggal">Tanggal: 17-09-2025</div>
 
 <div class="card">
+  <!-- Tabel Keluaran -->
   <table>
     <thead>
       <tr>
@@ -220,12 +236,12 @@
 
   <!-- Kotak Acak 4 Bola -->
   <div class="random-box">
-    <h2>Acak Angka Hokki</h2>
+    <h2>Acak Angka Hoki</h2>
     <div class="balls" id="randomBalls">
-      <div class="ball b0"><span>0</span></div>
-      <div class="ball b1"><span>1</span></div>
-      <div class="ball b2"><span>2</span></div>
-      <div class="ball b3"><span>3</span></div>
+      <div class="slot"><div class="ball b0"><span>0</span></div></div>
+      <div class="slot"><div class="ball b1"><span>1</span></div></div>
+      <div class="slot"><div class="ball b2"><span>2</span></div></div>
+      <div class="slot"><div class="ball b3"><span>3</span></div></div>
     </div>
     <button class="btn login-btn" onclick="acakBola()">
       <i class="fa-solid fa-dice"></i> Acak
@@ -245,14 +261,12 @@
 </div>
 
 <script>
-  // Acak angka 0-9 dan tampilkan warna asli bola billiard
   function acakBola() {
     const balls = document.querySelectorAll('#randomBalls .ball span');
     balls.forEach(ball => {
-      const angka = Math.floor(Math.random() * 10); // 0-9
+      const angka = Math.floor(Math.random() * 10);
       ball.textContent = angka;
-      const ballDiv = ball.parentElement;
-      ballDiv.className = 'ball b' + angka; // update warna sesuai angka
+      ball.parentElement.className = 'ball b' + angka;
     });
   }
 </script>
