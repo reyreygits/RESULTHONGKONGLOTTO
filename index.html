@@ -40,6 +40,38 @@
       font-weight: bold;
       color: #ffd60a;
     }
+
+    /* Gaya bola biliar */
+    .balls {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+    .ball {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #fff, #ff0000);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 18px;
+      color: #fff;
+      box-shadow: inset -3px -3px 6px rgba(0,0,0,0.4), 
+                  inset 3px 3px 6px rgba(255,255,255,0.3);
+    }
+    .ball span {
+      background: #fff;
+      color: #000;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
@@ -56,19 +88,39 @@
       <tr>
         <td class="date">1</td>
         <td>17-09-2025</td>
-        <td>1234</td>
+        <td>
+          <div class="balls">
+            <div class="ball"><span>1</span></div>
+            <div class="ball"><span>2</span></div>
+            <div class="ball"><span>3</span></div>
+            <div class="ball"><span>4</span></div>
+          </div>
+        </td>
       </tr>
       <tr>
         <td class="date">2</td>
         <td>17-09-2025</td>
-        <td>5678</td>
+        <td>
+          <div class="balls">
+            <div class="ball"><span>5</span></div>
+            <div class="ball"><span>6</span></div>
+            <div class="ball"><span>7</span></div>
+            <div class="ball"><span>8</span></div>
+          </div>
+        </td>
       </tr>
       <tr>
         <td class="date">3</td>
         <td>17-09-2025</td>
-        <td>9012</td>
+        <td>
+          <div class="balls">
+            <div class="ball"><span>9</span></div>
+            <div class="ball"><span>0</span></div>
+            <div class="ball"><span>1</span></div>
+            <div class="ball"><span>2</span></div>
+          </div>
+        </td>
       </tr>
-      <tr>
     </tbody>
   </table>
 </body>
