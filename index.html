@@ -3,26 +3,27 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Keluaran Nomor — HK Loto</title>
+<title>HK Lotto — Keluaran Nomor</title>
 <style>
   :root{
-    --bg:#071021;
-    --card: rgba(255,255,255,0.04);
-    --glass: rgba(255,255,255,0.03);
+    --bg:#061025;
+    --panel: rgba(255,255,255,0.03);
+    --glass: rgba(255,255,255,0.02);
     --accent1:#00d4ff;
     --accent2:#7f5cff;
-    --text:#eaf6ff;
-    --muted:#9fb2c8;
-    --success:#7ef59f;
-    --danger:#ff7b7b;
+    --text:#e9f7ff;
+    --muted:#8ea7bd;
+    --success:#6ef2a0;
+    --danger:#ff7676;
+    --card-radius:14px;
   }
   *{box-sizing:border-box}
   body{
     margin:0;
     min-height:100vh;
-    background: linear-gradient(180deg,#041022 0%, #07182a 60%);
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: linear-gradient(180deg,#031028 0%, #051528 60%);
     color:var(--text);
-    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     display:flex;
     align-items:flex-start;
     justify-content:center;
@@ -30,434 +31,482 @@
   }
 
   .wrap{
-    width:min(980px,96vw);
-    border-radius:14px;
+    width:min(1100px,98vw);
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border-radius:var(--card-radius);
     padding:20px;
-    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-    box-shadow: 0 6px 30px rgba(0,0,0,0.5);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.6);
     border:1px solid rgba(255,255,255,0.03);
   }
 
   header{
     display:flex;
-    gap:12px;
+    gap:14px;
     align-items:center;
     margin-bottom:18px;
   }
-  .logo{
-    width:54px;height:54px;border-radius:10px;
+  .brand{
+    width:56px;height:56px;border-radius:12px;
     background:linear-gradient(135deg,var(--accent2),var(--accent1));
-    display:flex;align-items:center;justify-content:center;font-weight:800;color:#021;
-    box-shadow:0 6px 20px rgba(127,92,255,0.12), 0 6px 30px rgba(0,212,255,0.06);
-    font-size:18px;
+    display:flex;align-items:center;justify-content:center;font-weight:800;color:#012;
+    font-size:20px;
+    box-shadow: 0 6px 20px rgba(127,92,255,0.12);
   }
   h1{margin:0;font-size:20px}
-  p.lead{margin:0;color:var(--muted);font-size:13px}
+  .lead{color:var(--muted);margin-top:3px;font-size:13px}
 
-  .grid{
+  .layout{
     display:grid;
-    grid-template-columns: 1fr 380px;
+    grid-template-columns: 1fr 360px;
     gap:18px;
     margin-top:16px;
   }
 
-  /* form area */
-  .card{
-    background:var(--card);
-    padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);
+  /* Left column */
+  .panel{
+    background:var(--panel);
+    padding:14px;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,0.02);
   }
 
-  label{display:block;color:var(--muted);font-size:13px;margin-bottom:6px}
-  input[type="date"], input[type="text"], textarea, select{
-    width:100%;
-    padding:10px 12px;
-    border-radius:8px;
-    background:var(--glass);
-    border:1px solid rgba(255,255,255,0.04);
+  /* Latest draw */
+  .latest{
+    display:flex;
+    gap:12px;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+  }
+  .latest-left{
+    display:flex;
+    gap:12px;
+    align-items:center;
+  }
+  .draw-info{
+    min-width:220px;
+  }
+  .draw-date{color:var(--muted);font-size:13px}
+  .draw-title{font-weight:800;font-size:18px;margin-top:4px;display:flex;gap:8px;align-items:center}
+  .badge{
+    padding:6px 10px;border-radius:10px;background:linear-gradient(90deg,var(--accent2),var(--accent1));color:#012;font-weight:800;font-size:13px;
+  }
+
+  .numbers{
+    display:flex;
+    gap:10px;
+    align-items:center;
+    flex-wrap:wrap;
+  }
+  .num{
+    min-width:56px;height:56px;border-radius:12px;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:900;font-size:18px;
+    background:linear-gradient(180deg,#fff3 0%, #fff0 60%);
+    border:1px solid rgba(255,255,255,0.06);
     color:var(--text);
-    outline:none;
-    font-size:14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.4), inset 0 -8px 24px rgba(0,0,0,0.15);
   }
-  .small{font-size:12px;color:var(--muted);margin-top:6px}
+  .num.special{
+    background:linear-gradient(90deg,#ffd57a,#ff9a5b);
+    color:#062;
+  }
 
-  .row{display:flex;gap:10px}
-  .row .col{flex:1}
-
+  .latest-actions{
+    display:flex;gap:8px;align-items:center;
+  }
   .btn{
-    display:inline-block;padding:10px 14px;border-radius:10px;
-    background:linear-gradient(90deg,var(--accent2),var(--accent1));
-    color:#021;font-weight:700;border:none;cursor:pointer;
-    box-shadow:0 8px 22px rgba(0,0,0,0.4);
+    padding:8px 12px;border-radius:10px;border:none;background:linear-gradient(90deg,var(--accent2),var(--accent1));color:#021;font-weight:700;cursor:pointer;
   }
   .btn.ghost{background:transparent;color:var(--accent1);border:1px solid rgba(255,255,255,0.04)}
   .btn.warn{background:linear-gradient(90deg,#ffd57a,#ff9a5b);color:#021}
 
-  .actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-  .muted{color:var(--muted);font-size:13px}
+  /* History / table */
+  .controls{
+    display:flex;gap:8px;align-items:center;margin-top:12px;flex-wrap:wrap;
+  }
+  .controls input[type="search"], .controls input[type="date"], .controls select{
+    padding:8px 10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:var(--glass);color:var(--text);
+  }
 
-  /* list area */
-  .list{
-    display:flex;flex-direction:column;gap:12px;
-    max-height:520px;overflow:auto;padding-right:6px;
+  .history{
+    margin-top:12px;
+  }
+  .history-list{
+    display:flex;flex-direction:column;gap:10px;max-height:520px;overflow:auto;padding-right:6px;
   }
   .entry{
-    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-    padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02);
-    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
+    border:1px solid rgba(255,255,255,0.02);
   }
-  .entry-left{display:flex;align-items:center;gap:12px}
-  .date{
-    min-width:110px;background:rgba(0,0,0,0.15);padding:8px 10px;border-radius:8px;text-align:center;font-weight:700;
-  }
-  .chips{display:flex;gap:8px;flex-wrap:wrap}
-  .chip{
-    padding:8px 10px;border-radius:10px;background:rgba(255,255,255,0.03);font-weight:700;min-width:44px;text-align:center;
-    box-shadow: inset 0 -6px 12px rgba(0,0,0,0.15);
-  }
-  .chip.special{background:linear-gradient(90deg,#ffd57a,#ff9a5b);color:#021}
-  .entry-right{display:flex;gap:8px;align-items:center}
+  .entry .left{display:flex;gap:12px;align-items:center}
+  .entry .date{min-width:110px;background:rgba(0,0,0,0.12);padding:8px 10px;border-radius:8px;text-align:center;font-weight:700}
+  .entry .chips{display:flex;gap:8px;flex-wrap:wrap}
+  .chip{padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.03);font-weight:700;min-width:40px;text-align:center}
 
-  .controls button{padding:8px 10px;border-radius:8px;border:none;background:rgba(255,255,255,0.03);color:var(--muted);cursor:pointer}
-  .controls button:hover{color:var(--text);background:rgba(255,255,255,0.05)}
+  .entry .right{display:flex;gap:8px;align-items:center}
+  .icon-btn{background:transparent;border:none;color:var(--muted);cursor:pointer;padding:8px;border-radius:8px}
+  .icon-btn:hover{color:var(--text);background:rgba(255,255,255,0.03)}
 
-  .center{display:flex;align-items:center;justify-content:center;gap:8px}
-  .note{font-size:13px;color:var(--muted);margin-top:12px}
-  footer{margin-top:16px;color:var(--muted);font-size:13px;text-align:center}
+  /* Right column: tools */
+  .side{
+    display:flex;flex-direction:column;gap:12px;
+    position:relative;
+  }
+  .side .panel{padding:12px}
+  .stat{display:flex;gap:12px;align-items:center;justify-content:space-between}
+  .stat .value{font-weight:900;font-size:18px;color:var(--accent1)}
+  .small{font-size:13px;color:var(--muted)}
 
   /* responsive */
-  @media (max-width:920px){
-    .grid{grid-template-columns:1fr}
-    .list{max-height:380px}
+  @media (max-width:980px){
+    .layout{grid-template-columns:1fr}
+    .side{order:2}
   }
 </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <div class="logo">HK</div>
+      <div class="brand">HK</div>
       <div>
-        <h1>Keluaran Nomor — HK Loto</h1>
-        <p class="lead">Catat dan tampilkan hasil undian Hong Kong. Simpan di browser, ekspor CSV, atau salin cepat.</p>
+        <h1>HK Lotto — Keluaran Nomor</h1>
+        <div class="lead">Data keluaran Hong Kong — catat, filter, salin, dan ekspor.</div>
       </div>
     </header>
 
-    <div class="grid">
-      <!-- LEFT: form + tools -->
+    <div class="layout">
+      <!-- LEFT: main -->
       <div>
-        <div class="card">
-          <label for="drawDate">Tanggal Undian</label>
-          <input id="drawDate" type="date">
+        <div class="panel latest">
+          <div class="latest-left">
+            <div class="draw-info">
+              <div class="draw-title">Latest Draw <span class="badge" id="latestIssue">#2025-09-17</span></div>
+              <div class="draw-date" id="latestDate">Tanggal: 2025-09-17 • Jam: 21:30</div>
+            </div>
 
-          <label for="numbers" style="margin-top:10px">Nomor (pisahkan koma)</label>
-          <input id="numbers" type="text" placeholder="Contoh: 01, 05, 12, 23, 34, 45">
-
-          <label for="note" style="margin-top:10px">Catatan / Keterangan (opsional)</label>
-          <input id="note" type="text" placeholder="Contoh: Malam / Siang / Special draw">
-
-          <div class="actions">
-            <button class="btn" id="addBtn">Tambah Hasil</button>
-            <button class="btn ghost" id="clearForm">Bersihkan</button>
-            <button class="btn warn" id="pasteBtn">Tempel dari Clipboard</button>
-          </div>
-
-          <div style="margin-top:12px" class="muted">
-            Format nomor: angka (01..99) dipisah koma. Sistem akan menormalisasi leading zero.
-          </div>
-        </div>
-
-        <div class="card" style="margin-top:12px;display:flex;flex-direction:column;gap:8px">
-          <div style="display:flex;gap:8px;align-items:center;justify-content:space-between">
-            <div><strong>Ekspor / Salin</strong></div>
-            <div class="muted">Data tersimpan: <span id="count">0</span></div>
-          </div>
-
-          <div style="display:flex;gap:8px;margin-top:6px">
-            <button class="btn" id="exportCsv">Ekspor CSV</button>
-            <button class="btn ghost" id="copyClipboard">Salin ke Clipboard</button>
-            <button class="btn ghost" id="importSample">Muat Sample</button>
-          </div>
-
-          <div class="note">
-            CSV akan berformat: date,numbers,remark
-          </div>
-        </div>
-      </div>
-
-      <!-- RIGHT: list -->
-      <div>
-        <div class="card">
-          <div style="display:flex;align-items:center;justify-content:space-between">
-            <strong>Daftar Hasil</strong>
-            <div style="display:flex;gap:8px;align-items:center">
-              <button class="btn ghost" id="clearAll">Hapus Semua</button>
+            <div class="numbers" id="latestNumbers" aria-live="polite">
+              <!-- numbers inserted by JS -->
             </div>
           </div>
 
-          <div style="margin-top:10px" class="muted">Klik tombol edit (🖉) di tiap baris untuk mengubah entry.</div>
-
-          <div style="margin-top:12px" class="list" id="resultsList">
-            <!-- entries appended here -->
+          <div class="latest-actions">
+            <button class="btn" id="copyLatest">Salin</button>
+            <button class="btn ghost" id="refreshBtn">Refresh</button>
+            <button class="btn warn" id="printBtn">Cetak</button>
           </div>
         </div>
 
-        <footer>
-          <div style="margin-top:12px">Made with ❤️ — local client-only tool</div>
-        </footer>
+        <div class="panel">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <strong>History Keluaran</strong>
+            <div class="small">Total: <span id="totalCount">0</span></div>
+          </div>
+
+          <div class="controls" style="margin-top:12px">
+            <input type="search" id="searchInput" placeholder="Cari angka atau keterangan..." />
+            <input type="date" id="fromDate" />
+            <input type="date" id="toDate" />
+            <select id="perPage">
+              <option value="10">Per halaman: 10</option>
+              <option value="20">20</option>
+              <option value="50">50</option>
+            </select>
+            <button class="btn ghost" id="exportCsv">Ekspor CSV</button>
+          </div>
+
+          <div class="history" id="historyWrap">
+            <div class="history-list" id="historyList">
+              <!-- entries -->
+            </div>
+          </div>
+        </div>
       </div>
+
+      <!-- RIGHT: side tools -->
+      <aside class="side">
+        <div class="panel">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <div><strong>Tambah / Edit</strong><div class="small">Tambahkan hasil baru</div></div>
+            <div class="small">Local only</div>
+          </div>
+
+          <div style="margin-top:10px">
+            <label class="small">Tanggal</label>
+            <input type="date" id="inputDate" />
+
+            <label class="small" style="margin-top:8px">Nomor (pisahkan koma)</label>
+            <input type="text" id="inputNumbers" placeholder="Contoh: 01, 05, 12, 23, 34, 45" />
+
+            <label class="small" style="margin-top:8px">Keterangan (opsional)</label>
+            <input type="text" id="inputRemark" placeholder="Contoh: Malam / Siang / Special" />
+
+            <div style="display:flex;gap:8px;margin-top:10px">
+              <button class="btn" id="addEntry">Tambah</button>
+              <button class="btn ghost" id="clearInput">Bersihkan</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div class="stat"><div>Entries</div><div class="value" id="statTotal">0</div></div>
+            <div class="stat"><div>Last update</div><div class="small" id="statLast">-</div></div>
+            <div class="stat"><div>Saved</div><div class="small" id="statSaved">local</div></div>
+
+            <div style="margin-top:8px" class="small">Tips: Klik nomor di history untuk menyalin angka.</div>
+          </div>
+        </div>
+      </aside>
     </div>
   </div>
 
 <script>
 (() => {
-  const addBtn = document.getElementById('addBtn');
-  const dateEl = document.getElementById('drawDate');
-  const numbersEl = document.getElementById('numbers');
-  const noteEl = document.getElementById('note');
-  const resultsList = document.getElementById('resultsList');
-  const countEl = document.getElementById('count');
-  const clearAllBtn = document.getElementById('clearAll');
+  const STORAGE_KEY = 'hk_lotto_results_v2';
+
+  // Elements
+  const latestNumbersEl = document.getElementById('latestNumbers');
+  const latestIssueEl = document.getElementById('latestIssue');
+  const latestDateEl = document.getElementById('latestDate');
+  const copyLatestBtn = document.getElementById('copyLatest');
+  const refreshBtn = document.getElementById('refreshBtn');
+  const printBtn = document.getElementById('printBtn');
+
+  const historyListEl = document.getElementById('historyList');
+  const totalCountEl = document.getElementById('totalCount');
+  const statTotalEl = document.getElementById('statTotal');
+  const statLastEl = document.getElementById('statLast');
+
+  const addEntryBtn = document.getElementById('addEntry');
+  const clearInputBtn = document.getElementById('clearInput');
+  const inputDate = document.getElementById('inputDate');
+  const inputNumbers = document.getElementById('inputNumbers');
+  const inputRemark = document.getElementById('inputRemark');
+
+  const searchInput = document.getElementById('searchInput');
+  const fromDate = document.getElementById('fromDate');
+  const toDate = document.getElementById('toDate');
+  const perPage = document.getElementById('perPage');
   const exportCsvBtn = document.getElementById('exportCsv');
-  const copyClipboardBtn = document.getElementById('copyClipboard');
-  const importSampleBtn = document.getElementById('importSample');
-  const clearFormBtn = document.getElementById('clearForm');
-  const pasteBtn = document.getElementById('pasteBtn');
 
-  // storage key
-  const STORAGE_KEY = 'hk_loto_results_v1';
-
-  // helper utils
-  function loadData() {
-    try {
+  // helpers
+  function loadData(){
+    try{
       const raw = localStorage.getItem(STORAGE_KEY);
       return raw ? JSON.parse(raw) : [];
-    } catch (e) {
-      console.error(e);
+    }catch(e){
       return [];
     }
   }
-  function saveData(arr) {
+  function saveData(arr){
     localStorage.setItem(STORAGE_KEY, JSON.stringify(arr));
-    renderList();
-  }
-  function normalizeNumberToken(tok){
-    if(!tok) return null;
-    const n = parseInt(tok,10);
-    if(Number.isNaN(n)) return null;
-    if(n < 0 || n > 99) return null; // batas
-    return n < 10 ? ('0' + n) : (''+n);
-  }
-  function parseNumbersInput(str){
-    // accept comma, space separated
-    const toks = str.split(/[,\s]+/).map(s=>s.trim()).filter(Boolean);
-    const nums = [];
-    for(const t of toks){
-      const v = normalizeNumberToken(t.replace(/^0+/, '')); // strip leading zeros then re-normalize
-      if(v === null) return null;
-      if(!nums.includes(v)) nums.push(v);
-    }
-    return nums;
+    renderAll();
   }
 
-  // render
-  function renderList(){
+  function normalizeTok(t){
+    if(t===null||t===undefined) return null;
+    const n = parseInt(String(t).replace(/\D/g,''),10);
+    if(isNaN(n) || n<0 || n>99) return null;
+    return n<10 ? '0'+n : ''+n;
+  }
+
+  function parseNumbers(str){
+    const tokens = String(str).split(/[,\s]+/).map(s=>s.trim()).filter(Boolean);
+    const out = [];
+    for(const t of tokens){
+      const n = normalizeTok(t);
+      if(n===null) return null;
+      if(!out.includes(n)) out.push(n);
+    }
+    return out;
+  }
+
+  // sample initial data if empty
+  function seedIfEmpty(){
+    const arr = loadData();
+    if(arr.length===0){
+      const sample = [
+        { date:'2025-09-17', numbers:['02','09','13','22','35','48'], remark:'Malam', created:Date.now() - 3600*1000*24 },
+        { date:'2025-09-16', numbers:['01','05','11','20','31','46'], remark:'Siang', created:Date.now() - 3600*1000*48 },
+        { date:'2025-09-15', numbers:['03','12','25','28','33','44'], remark:'Malam', created:Date.now() - 3600*1000*72 }
+      ];
+      saveData(sample);
+    }
+  }
+
+  // render latest
+  function renderLatest(){
     const data = loadData();
-    resultsList.innerHTML = '';
-    data.slice().reverse().forEach((entry, idx) => {
-      const i = data.length - 1 - idx; // original index
+    if(!data.length){
+      latestNumbersEl.innerHTML = '<div class="num">--</div>';
+      latestIssueEl.textContent = '#-';
+      latestDateEl.textContent = 'Tidak ada data';
+      return;
+    }
+    // assume latest is last item
+    const latest = data[data.length-1];
+    latestIssueEl.textContent = '#'+latest.date;
+    latestDateEl.textContent = 'Tanggal: '+latest.date + (latest.remark ? ' • '+latest.remark : '');
+    latestNumbersEl.innerHTML = '';
+    latest.numbers.forEach((n,i) => {
+      const d = document.createElement('div');
+      d.className = 'num' + (i===latest.numbers.length-1 ? ' special' : '');
+      d.textContent = n;
+      d.title = 'Klik untuk salin angka ' + n;
+      d.style.cursor = 'pointer';
+      d.onclick = ()=> {
+        navigator.clipboard.writeText(n).then(()=> alert('Angka '+n+' disalin'));
+      };
+      latestNumbersEl.appendChild(d);
+    });
+  }
+
+  // render history list (with filters)
+  function renderHistory(){
+    const all = loadData();
+    // apply filters
+    let filtered = all.slice();
+    const q = searchInput.value.trim().toLowerCase();
+    if(q){
+      filtered = filtered.filter(e => {
+        const s = (e.date + ' ' + (e.numbers||[]).join(' ') + ' ' + (e.remark||'')).toLowerCase();
+        return s.indexOf(q) !== -1;
+      });
+    }
+    if(fromDate.value){
+      filtered = filtered.filter(e => e.date >= fromDate.value);
+    }
+    if(toDate.value){
+      filtered = filtered.filter(e => e.date <= toDate.value);
+    }
+
+    // pagination length perPage (we'll simply show first N)
+    const n = parseInt(perPage.value,10) || 20;
+    const show = filtered.slice().reverse().slice(0,n);
+
+    historyListEl.innerHTML = '';
+    show.forEach((e, idx) => {
       const el = document.createElement('div');
       el.className = 'entry';
-      const left = document.createElement('div');
-      left.className = 'entry-left';
-      const dateBox = document.createElement('div');
-      dateBox.className = 'date';
-      dateBox.textContent = entry.date || '—';
+      const left = document.createElement('div'); left.className='left';
+      const dateBox = document.createElement('div'); dateBox.className = 'date'; dateBox.textContent = e.date;
       left.appendChild(dateBox);
-
-      const chips = document.createElement('div');
-      chips.className = 'chips';
-      (entry.numbers || []).forEach((num, j) => {
-        const chip = document.createElement('div');
-        chip.className = 'chip';
-        // mark special/single out if last number? we won't assume; user can mark via note
-        chip.textContent = num;
-        chips.appendChild(chip);
+      const chips = document.createElement('div'); chips.className = 'chips';
+      (e.numbers||[]).forEach(num => {
+        const c = document.createElement('div'); c.className = 'chip'; c.textContent = num;
+        c.title = 'Klik untuk salin ' + num;
+        c.style.cursor = 'pointer';
+        c.onclick = ()=> { navigator.clipboard.writeText(num).then(()=> alert('Disalin: '+num)); };
+        chips.appendChild(c);
       });
       left.appendChild(chips);
+      if(e.remark){
+        const r = document.createElement('div');
+        r.style.marginLeft='8px'; r.style.color='var(--muted)'; r.style.fontSize='13px';
+        r.textContent = e.remark;
+        left.appendChild(r);
+      }
 
-      const meta = document.createElement('div');
-      meta.style.marginLeft = '10px';
-      meta.style.color = 'var(--muted)';
-      meta.style.fontSize = '13px';
-      meta.innerHTML = entry.remark ? `<div>${entry.remark}</div>` : '';
-      left.appendChild(meta);
-
-      const right = document.createElement('div');
-      right.className = 'entry-right';
-
-      const controls = document.createElement('div');
-      controls.className = 'controls';
-
-      const editBtn = document.createElement('button');
-      editBtn.title = 'Edit';
-      editBtn.innerHTML = '🖉';
-      editBtn.onclick = ()=> editEntry(i);
-
-      const delBtn = document.createElement('button');
-      delBtn.title = 'Hapus';
-      delBtn.innerHTML = '🗑';
+      const right = document.createElement('div'); right.className='right';
+      const editBtn = document.createElement('button'); editBtn.className='icon-btn'; editBtn.title='Edit'; editBtn.innerHTML='✎';
+      editBtn.onclick = ()=> editEntry(all.indexOf(e));
+      const delBtn = document.createElement('button'); delBtn.className='icon-btn'; delBtn.title='Hapus'; delBtn.innerHTML='🗑';
       delBtn.onclick = ()=> {
-        if(!confirm('Hapus entry ini?')) return;
+        if(!confirm('Hapus entry untuk '+e.date+' ?')) return;
         const arr = loadData();
-        arr.splice(i,1);
-        saveData(arr);
+        const idx = arr.indexOf(e);
+        if(idx>=0){ arr.splice(idx,1); saveData(arr); }
       };
 
-      const copyBtn = document.createElement('button');
-      copyBtn.title = 'Salin angka';
-      copyBtn.innerHTML = '📋';
-      copyBtn.onclick = ()=> {
-        const text = `${entry.date} — ${entry.numbers.join(', ')} ${entry.remark ? ' — '+entry.remark : ''}`;
-        navigator.clipboard.writeText(text).then(()=> alert('Disalin ke clipboard'));
-      };
+      right.appendChild(editBtn);
+      right.appendChild(delBtn);
 
-      controls.appendChild(editBtn);
-      controls.appendChild(copyBtn);
-      controls.appendChild(delBtn);
-      right.appendChild(controls);
-
-      el.appendChild(left);
-      el.appendChild(right);
-
-      resultsList.appendChild(el);
+      el.appendChild(left); el.appendChild(right);
+      historyListEl.appendChild(el);
     });
 
-    countEl.textContent = loadData().length;
+    totalCountEl.textContent = filtered.length;
+    statTotalEl.textContent = loadData().length;
   }
 
-  // actions
-  addBtn.addEventListener('click', ()=>{
-    const date = dateEl.value;
-    const numsRaw = numbersEl.value.trim();
-    const remark = noteEl.value.trim();
-    if(!date){
-      alert('Pilih tanggal undian terlebih dahulu!');
-      return;
-    }
-    if(!numsRaw){
-      alert('Masukkan minimal satu nomor!');
-      return;
-    }
-    const nums = parseNumbersInput(numsRaw);
-    if(!nums || nums.length === 0){
-      alert('Format nomor salah. Gunakan angka 0–99, pisahkan dengan koma/spasi.');
-      return;
-    }
-    // build entry
+  function renderAll(){
+    renderLatest();
+    renderHistory();
+    statLastEl.textContent = new Date().toLocaleString();
+  }
+
+  // add entry
+  addEntryBtn.addEventListener('click', ()=>{
+    const date = inputDate.value;
+    const nums = parseNumbers(inputNumbers.value);
+    const remark = inputRemark.value.trim();
+    if(!date){ alert('Pilih tanggal'); return; }
+    if(!nums || nums.length===0){ alert('Masukkan nomor yang valid (01..99), pisahkan koma/spasi'); return; }
     const arr = loadData();
-    arr.push({ date, numbers: nums, remark });
+    arr.push({ date, numbers: nums, remark, created: Date.now() });
     saveData(arr);
-    // clear inputs
-    numbersEl.value = '';
-    noteEl.value = '';
-    // optional: keep date for next entry
+    inputNumbers.value=''; inputRemark.value='';
+    inputDate.value='';
   });
 
-  clearFormBtn.addEventListener('click', ()=>{
-    dateEl.value = '';
-    numbersEl.value = '';
-    noteEl.value = '';
+  clearInputBtn.addEventListener('click', ()=>{
+    inputDate.value=''; inputNumbers.value=''; inputRemark.value='';
   });
 
-  pasteBtn.addEventListener('click', async ()=>{
-    try{
-      const text = await navigator.clipboard.readText();
-      if(!text) { alert('Clipboard kosong'); return; }
-      // try to extract numbers from clipboard text
-      // find date pattern
-      const maybeDate = text.match(/\d{4}-\d{2}-\d{2}/);
-      if(maybeDate) dateEl.value = maybeDate[0];
-      // find numbers
-      const nums = text.match(/\d{1,2}/g);
-      if(nums && nums.length){
-        numbersEl.value = nums.join(', ');
-      } else {
-        numbersEl.value = text;
-      }
-      alert('Isi ditempel dari clipboard ke form (periksa sebelum tambah).');
-    }catch(e){
-      alert('Gagal membaca clipboard: ' + e.message);
-    }
+  // edit entry: load to form and remove original
+  function editEntry(index){
+    const arr = loadData();
+    if(index<0 || index>=arr.length) return;
+    const e = arr[index];
+    if(!confirm('Edit entry '+e.date+' — data akan dimuat ke form.')) return;
+    inputDate.value = e.date;
+    inputNumbers.value = e.numbers.join(', ');
+    inputRemark.value = e.remark || '';
+    arr.splice(index,1);
+    saveData(arr);
+  }
+
+  // copy latest
+  copyLatestBtn.addEventListener('click', ()=>{
+    const data = loadData();
+    if(!data.length){ alert('Tidak ada data'); return; }
+    const latest = data[data.length-1];
+    const txt = latest.date + ' — ' + latest.numbers.join(', ') + (latest.remark ? ' — '+latest.remark : '');
+    navigator.clipboard.writeText(txt).then(()=> alert('Latest disalin'));
   });
 
-  clearAllBtn.addEventListener('click', ()=>{
-    if(!confirm('Hapus semua hasil? Tindakan ini tidak bisa di-undo.')) return;
-    localStorage.removeItem(STORAGE_KEY);
-    renderList();
+  refreshBtn.addEventListener('click', ()=> {
+    renderAll();
+    alert('Refreshed (local view)');
   });
 
+  printBtn.addEventListener('click', ()=> window.print());
+
+  // export CSV
   exportCsvBtn.addEventListener('click', ()=>{
     const data = loadData();
-    if(!data.length){ alert('Tidak ada data untuk diekspor'); return; }
+    if(!data.length){ alert('Tidak ada data'); return; }
     const rows = data.map(d => `${d.date},"${d.numbers.join(' ')}","${(d.remark||'')}"`);
     const csv = 'date,numbers,remark\n' + rows.join('\n');
     const blob = new Blob([csv], { type: 'text/csv' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
-    a.href = url;
-    a.download = 'hk-loto-results.csv';
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
+    a.href = url; a.download = 'hk-lotto.csv'; document.body.appendChild(a); a.click(); a.remove();
     URL.revokeObjectURL(url);
   });
 
-  copyClipboardBtn.addEventListener('click', async ()=>{
-    const data = loadData();
-    if(!data.length){ alert('Tidak ada data untuk disalin'); return; }
-    const lines = data.map(d => `${d.date} — ${d.numbers.join(', ')}${d.remark ? ' — '+d.remark : ''}`);
-    try {
-      await navigator.clipboard.writeText(lines.join('\\n'));
-      alert('Hasil disalin ke clipboard');
-    } catch(e){
-      alert('Gagal menyalin: ' + e.message);
-    }
-  });
+  // filters events
+  [searchInput, fromDate, toDate, perPage].forEach(el => el.addEventListener('input', renderHistory));
 
-  importSampleBtn.addEventListener('click', ()=>{
-    const sample = [
-      { date: todayOffset(-2), numbers: ['03','12','25','28','33','44'], remark: 'Malem' },
-      { date: todayOffset(-1), numbers: ['01','05','11','20','31','46'], remark: 'Siang' },
-      { date: todayOffset(0), numbers: ['02','09','13','22','35','48'], remark: 'Special' }
-    ];
-    saveData(sample);
-    alert('Sample dimuat');
-  });
+  // init
+  seedIfEmpty();
+  renderAll();
 
-  function todayOffset(offset=0){
-    const d = new Date(); d.setDate(d.getDate()+offset);
-    return d.toISOString().slice(0,10);
-  }
-
-  // edit
-  function editEntry(index){
-    const arr = loadData();
-    const e = arr[index];
-    if(!e) return;
-    // populate form with entry and remove it (user will re-add after edit)
-    if(!confirm('Edit entry: data akan dimuat ke form. Simpan setelah selesai (entry akan dihapus secara sementara).')) return;
-    dateEl.value = e.date || '';
-    numbersEl.value = (e.numbers||[]).join(', ');
-    noteEl.value = e.remark || '';
-    arr.splice(index,1);
-    saveData(arr);
-  }
-
-  // initial render
-  renderList();
-
-  // expose for debugging (optional)
-  window.hkLoto = { loadData, saveData, parseNumbersInput };
-
+  // expose (optional)
+  window.hklotto = {
+    loadData, saveData, parseNumbers
+  };
 })();
 </script>
 </body>
