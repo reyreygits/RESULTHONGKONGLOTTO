@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hong Kong Lotto</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #5D2D77;
+            color: white;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            background-color: #2E0A49;
+            padding: 20px;
+            text-align: center;
+        }
+        header img {
+            width: 150px;
+        }
+        .content {
+            background-color: #9B2D5A;
+            padding: 20px;
+        }
+        .content h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .winning-numbers {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            font-size: 1.5em;
+            margin-bottom: 30px;
+        }
+        .winning-numbers span {
+            display: inline-block;
+            background-color: #F3D14C;
+            border-radius: 50%;
+            padding: 20px;
+            font-weight: bold;
+            color: #4D1B22;
+        }
+        .draw-info {
+            text-align: center;
+        }
+        .draw-info p {
+            font-size: 1.2em;
+        }
+        .city-background {
+            background: url('https://via.placeholder.com/1000x300') no-repeat center center;
+            background-size: cover;
+            height: 300px;
+            opacity: 0.3;
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .city-background::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .button {
+            text-align: center;
+        }
+        .button a {
+            padding: 10px 20px;
+            background-color: #E5A000;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 20px;
+            display: inline-block;
+        }
+        .button a:hover {
+            background-color: #d28f00;
+        }
+        .input-section {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .input-section input {
+            padding: 10px;
+            font-size: 1.2em;
+            margin: 5px;
+            border-radius: 5px;
+            border: none;
+            width: 50px;
+            text-align: center;
+        }
+        .input-section label {
+            font-size: 1.5em;
+            margin-right: 20px;
+        }
+        .fa-billiards {
+            font-size: 40px;
+            color: #F3D14C;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="https://via.placeholder.com/150x50" alt="Hong Kong Lotto Logo">
+</header>
+
+<div class="content">
+    <div class="city-background"></div>
+    <h1>Winning Numbers</h1>
+    
+    <!-- Winning Numbers -->
+    <div class="winning-numbers">
+        <span>01</span>
+        <span>09</span>
+        <span>39</span>
+    </div>
+    
+    <!-- Draw Info -->
+    <div class="draw-info">
+        <p><strong>Latest Draw 4D</strong></p>
+        <p>Tuesday, 16 September 2025 | 23:00:00 (GMT +7)</p>
+    </div>
+
+    <!-- Input Section to Change Numbers -->
+    <div class="input-section">
+        <label for="num1">Number 1:</label>
+        <input type="number" id="num1" value="01">
+        <label for="num2">Number 2:</label>
+        <input type="number" id="num2" value="09">
+        <label for="num3">Number 3:</label>
+        <input type="number" id="num3" value="39">
+    </div>
+
+    <!-- Input Section for Draw Date -->
+    <div class="input-section">
+        <label for="drawDate">Draw Date:</label>
+        <input type="date" id="drawDate" value="2025-09-16">
+    </div>
+
+    <!-- Icon Section (Billiards Icon) -->
+    <div class="text-center">
+        <i class="fas fa-billiards"></i>
+    </div>
+
+    <!-- Button to View All Past Draws -->
+    <div class="button">
+        <a href="#">View All Past Draws</a>
+    </div>
+</div>
+
+<script>
+    // Example for dynamically updating the winning numbers and draw date
+    const num1 = document.getElementById("num1");
+    const num2 = document.getElementById("num2");
+    const num3 = document.getElementById("num3");
+    const drawDate = document.getElementById("drawDate");
+
+    // Update function
+    function updateDrawInfo() {
+        // Set the numbers dynamically
+        document.querySelectorAll(".winning-numbers span")[0].textContent = num1.value;
+        document.querySelectorAll(".winning-numbers span")[1].textContent = num2.value;
+        document.querySelectorAll(".winning-numbers span")[2].textContent = num3.value;
+
+        // Set the draw date dynamically
+        const dateText = new Date(drawDate.value).toLocaleDateString("en-GB", {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+        });
+        document.querySelector(".draw-info p").textContent = `Tuesday, ${dateText} | 23:00:00 (GMT +7)`;
+    }
+
+    // Event listeners to update on change
+    num1.addEventListener("input", updateDrawInfo);
+    num2.addEventListener("input", updateDrawInfo);
+    num3.addEventListener("input", updateDrawInfo);
+    drawDate.addEventListener("change", updateDrawInfo);
+
+    // Initialize with default values
+    updateDrawInfo();
+</script>
+
+</body>
+</html>
