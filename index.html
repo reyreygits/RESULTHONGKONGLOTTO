@@ -15,11 +15,19 @@
     h1 {
       text-align: center;
       color: #ffd60a;
+      margin-bottom: 10px;
+    }
+    .tanggal {
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: #00d4ff;
+      font-weight: bold;
     }
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 20px;
+      margin-top: 10px;
       background: #1b263b;
       border-radius: 10px;
       overflow: hidden;
@@ -51,7 +59,6 @@
       width: 50px;
       height: 50px;
       border-radius: 50%;
-      background: radial-gradient(circle at 30% 30%, #fff, #ff0000);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -72,52 +79,62 @@
       justify-content: center;
       font-size: 14px;
     }
+
+    /* Warna bola biliar standar */
+    .b0  { background: radial-gradient(circle at 30% 30%, #fff, #ddd); color: #000; }
+    .b1  { background: radial-gradient(circle at 30% 30%, #ffcc00, #d4a600); }
+    .b2  { background: radial-gradient(circle at 30% 30%, #0000ff, #000088); }
+    .b3  { background: radial-gradient(circle at 30% 30%, #ff0000, #880000); }
+    .b4  { background: radial-gradient(circle at 30% 30%, #800080, #400040); }
+    .b5  { background: radial-gradient(circle at 30% 30%, #ff6600, #993300); }
+    .b6  { background: radial-gradient(circle at 30% 30%, #006400, #003300); }
+    .b7  { background: radial-gradient(circle at 30% 30%, #800000, #400000); }
+    .b8  { background: radial-gradient(circle at 30% 30%, #000000, #333333); }
+    .b9  { background: radial-gradient(circle at 30% 30%, #ffcc00, #d4a600); }
   </style>
 </head>
 <body>
-  <h1>Hasil Keluaran Angka (Simulasi)</h1>
+  <h1>Hasil Keluaran Angka</h1>
+  <div class="tanggal">Tanggal: 17-09-2025</div>
+
   <table>
     <thead>
       <tr>
         <th>PRIZE</th>
-        <th>TANGGAL</th>
         <th>Angka Keluaran</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td class="date">1</td>
-        <td>17-09-2025</td>
         <td>
           <div class="balls">
-            <div class="ball"><span>1</span></div>
-            <div class="ball"><span>2</span></div>
-            <div class="ball"><span>3</span></div>
-            <div class="ball"><span>4</span></div>
+            <div class="ball b1"><span>1</span></div>
+            <div class="ball b2"><span>2</span></div>
+            <div class="ball b3"><span>3</span></div>
+            <div class="ball b4"><span>4</span></div>
           </div>
         </td>
       </tr>
       <tr>
         <td class="date">2</td>
-        <td>17-09-2025</td>
         <td>
           <div class="balls">
-            <div class="ball"><span>5</span></div>
-            <div class="ball"><span>6</span></div>
-            <div class="ball"><span>7</span></div>
-            <div class="ball"><span>8</span></div>
+            <div class="ball b5"><span>5</span></div>
+            <div class="ball b6"><span>6</span></div>
+            <div class="ball b7"><span>7</span></div>
+            <div class="ball b8"><span>8</span></div>
           </div>
         </td>
       </tr>
       <tr>
         <td class="date">3</td>
-        <td>17-09-2025</td>
         <td>
           <div class="balls">
-            <div class="ball"><span>9</span></div>
-            <div class="ball"><span>0</span></div>
-            <div class="ball"><span>1</span></div>
-            <div class="ball"><span>2</span></div>
+            <div class="ball b9"><span>9</span></div>
+            <div class="ball b0"><span>0</span></div>
+            <div class="ball b1"><span>1</span></div>
+            <div class="ball b2"><span>2</span></div>
           </div>
         </td>
       </tr>
