@@ -43,6 +43,13 @@
       width: 100%;
       border-collapse: collapse;
       margin-top: 10px;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    thead tr {
+      background: linear-gradient(90deg, #ffd60a, #ff9900);
+      color: #000;
     }
 
     th, td {
@@ -51,19 +58,14 @@
       border-bottom: 1px solid rgba(255,255,255,0.1);
     }
 
-    th {
-      background: rgba(255, 255, 255, 0.2);
-      color: #000;
-      font-weight: 600;
-    }
-
     tr:hover {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.08);
     }
 
     .date {
-      font-weight: bold;
+      font-weight: 900;
       color: #ffd60a;
+      font-size: 20px; /* angka PRIZE lebih besar */
     }
 
     /* Bola biliar */
@@ -116,6 +118,27 @@
     .b7  { background: radial-gradient(circle at 30% 30%, #800000, #400000); }
     .b8  { background: radial-gradient(circle at 30% 30%, #000000, #333333); }
     .b9  { background: radial-gradient(circle at 30% 30%, #ffcc00, #d4a600); }
+
+    /* Tombol Login */
+    .login-btn {
+      display: block;
+      margin: 25px auto 0;
+      padding: 14px 28px;
+      background: linear-gradient(90deg, #7f5cff, #00d4ff);
+      border: none;
+      border-radius: 12px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 20px rgba(0,212,255,0.25);
+    }
+
+    .login-btn:hover {
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 8px 25px rgba(127,92,255,0.35);
+    }
   </style>
 </head>
 <body>
@@ -166,6 +189,9 @@
         </tr>
       </tbody>
     </table>
+
+    <!-- Tombol Login -->
+    <button class="login-btn" onclick="window.location.href='https://contoh-login.com'">LOGIN</button>
   </div>
 </body>
 </html>
