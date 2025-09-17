@@ -3,61 +3,79 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hasil Keluaran Angka</title>
+  <title>Hasil Keluaran Hongkong Lotto - Glorygame99</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #0d1b2a;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
       color: #fff;
       margin: 0;
       padding: 20px;
     }
+
     h1 {
       text-align: center;
       color: #ffd60a;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
+      font-size: 28px;
     }
+
     .tanggal {
       text-align: center;
       font-size: 18px;
-      margin-bottom: 20px;
-      color: #00d4ff;
-      font-weight: bold;
+      margin-bottom: 25px;
+      color: #00eaff;
+      font-weight: 600;
     }
+
+    .card {
+      max-width: 900px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      padding: 20px;
+      backdrop-filter: blur(10px);
+    }
+
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 10px;
-      background: #1b263b;
-      border-radius: 10px;
-      overflow: hidden;
     }
+
     th, td {
-      padding: 12px;
+      padding: 14px;
       text-align: center;
-      border-bottom: 1px solid #415a77;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
     }
+
     th {
-      background: #778da9;
+      background: rgba(255, 255, 255, 0.2);
       color: #000;
+      font-weight: 600;
     }
+
     tr:hover {
-      background: #415a77;
+      background: rgba(255, 255, 255, 0.1);
     }
+
     .date {
       font-weight: bold;
       color: #ffd60a;
     }
 
-    /* Gaya bola biliar */
+    /* Bola biliar */
     .balls {
       display: flex;
       justify-content: center;
-      gap: 10px;
+      gap: 12px;
     }
+
     .ball {
-      width: 50px;
-      height: 50px;
+      width: 55px;
+      height: 55px;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -65,15 +83,22 @@
       font-weight: bold;
       font-size: 18px;
       color: #fff;
-      box-shadow: inset -3px -3px 6px rgba(0,0,0,0.4), 
-                  inset 3px 3px 6px rgba(255,255,255,0.3);
+      transition: transform 0.3s ease;
+      box-shadow: inset -3px -3px 6px rgba(0,0,0,0.6), 
+                  inset 3px 3px 6px rgba(255,255,255,0.3),
+                  0 4px 10px rgba(0,0,0,0.5);
     }
+
+    .ball:hover {
+      transform: scale(1.1);
+    }
+
     .ball span {
       background: #fff;
       color: #000;
       border-radius: 50%;
-      width: 24px;
-      height: 24px;
+      width: 26px;
+      height: 26px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -81,7 +106,7 @@
     }
 
     /* Warna bola biliar standar */
-    .b0  { background: radial-gradient(circle at 30% 30%, #fff, #ddd); color: #000; }
+    .b0  { background: radial-gradient(circle at 30% 30%, #fff, #bbb); color: #000; }
     .b1  { background: radial-gradient(circle at 30% 30%, #ffcc00, #d4a600); }
     .b2  { background: radial-gradient(circle at 30% 30%, #0000ff, #000088); }
     .b3  { background: radial-gradient(circle at 30% 30%, #ff0000, #880000); }
@@ -94,51 +119,53 @@
   </style>
 </head>
 <body>
-  <h1>Hasil Keluaran Angka</h1>
+  <h1>Hasil Keluaran Hongkong Lotto</h1>
   <div class="tanggal">Tanggal: 17-09-2025</div>
 
-  <table>
-    <thead>
-      <tr>
-        <th>PRIZE</th>
-        <th>Angka Keluaran</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="date">1</td>
-        <td>
-          <div class="balls">
-            <div class="ball b1"><span>1</span></div>
-            <div class="ball b2"><span>2</span></div>
-            <div class="ball b3"><span>3</span></div>
-            <div class="ball b4"><span>4</span></div>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td class="date">2</td>
-        <td>
-          <div class="balls">
-            <div class="ball b5"><span>5</span></div>
-            <div class="ball b6"><span>6</span></div>
-            <div class="ball b7"><span>7</span></div>
-            <div class="ball b8"><span>8</span></div>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td class="date">3</td>
-        <td>
-          <div class="balls">
-            <div class="ball b9"><span>9</span></div>
-            <div class="ball b0"><span>0</span></div>
-            <div class="ball b1"><span>1</span></div>
-            <div class="ball b2"><span>2</span></div>
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="card">
+    <table>
+      <thead>
+        <tr>
+          <th>PRIZE</th>
+          <th>Angka Keluaran</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="date">01</td>
+          <td>
+            <div class="balls">
+              <div class="ball b1"><span>1</span></div>
+              <div class="ball b2"><span>2</span></div>
+              <div class="ball b3"><span>3</span></div>
+              <div class="ball b4"><span>4</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="date">02</td>
+          <td>
+            <div class="balls">
+              <div class="ball b5"><span>5</span></div>
+              <div class="ball b6"><span>6</span></div>
+              <div class="ball b7"><span>7</span></div>
+              <div class="ball b8"><span>8</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="date">03</td>
+          <td>
+            <div class="balls">
+              <div class="ball b9"><span>9</span></div>
+              <div class="ball b0"><span>0</span></div>
+              <div class="ball b1"><span>1</span></div>
+              <div class="ball b2"><span>2</span></div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </body>
 </html>
