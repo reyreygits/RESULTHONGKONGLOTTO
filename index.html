@@ -1,196 +1,464 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hong Kong Lotto</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #5D2D77;
-            color: white;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        header {
-            background-color: #2E0A49;
-            padding: 20px;
-            text-align: center;
-        }
-        header img {
-            width: 150px;
-        }
-        .content {
-            background-color: #9B2D5A;
-            padding: 20px;
-        }
-        .content h1 {
-            text-align: center;
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-        .winning-numbers {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            font-size: 1.5em;
-            margin-bottom: 30px;
-        }
-        .winning-numbers span {
-            display: inline-block;
-            background-color: #F3D14C;
-            border-radius: 50%;
-            padding: 20px;
-            font-weight: bold;
-            color: #4D1B22;
-        }
-        .draw-info {
-            text-align: center;
-        }
-        .draw-info p {
-            font-size: 1.2em;
-        }
-        .city-background {
-            background: url('https://via.placeholder.com/1000x300') no-repeat center center;
-            background-size: cover;
-            height: 300px;
-            opacity: 0.3;
-            position: relative;
-            margin-bottom: 20px;
-        }
-        .city-background::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-        .button {
-            text-align: center;
-        }
-        .button a {
-            padding: 10px 20px;
-            background-color: #E5A000;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            margin-top: 20px;
-            display: inline-block;
-        }
-        .button a:hover {
-            background-color: #d28f00;
-        }
-        .input-section {
-            text-align: center;
-            margin: 30px 0;
-        }
-        .input-section input {
-            padding: 10px;
-            font-size: 1.2em;
-            margin: 5px;
-            border-radius: 5px;
-            border: none;
-            width: 50px;
-            text-align: center;
-        }
-        .input-section label {
-            font-size: 1.5em;
-            margin-right: 20px;
-        }
-        .fa-billiards {
-            font-size: 40px;
-            color: #F3D14C;
-        }
-    </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Keluaran Nomor — HK Loto</title>
+<style>
+  :root{
+    --bg:#071021;
+    --card: rgba(255,255,255,0.04);
+    --glass: rgba(255,255,255,0.03);
+    --accent1:#00d4ff;
+    --accent2:#7f5cff;
+    --text:#eaf6ff;
+    --muted:#9fb2c8;
+    --success:#7ef59f;
+    --danger:#ff7b7b;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    min-height:100vh;
+    background: linear-gradient(180deg,#041022 0%, #07182a 60%);
+    color:var(--text);
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    display:flex;
+    align-items:flex-start;
+    justify-content:center;
+    padding:28px;
+  }
+
+  .wrap{
+    width:min(980px,96vw);
+    border-radius:14px;
+    padding:20px;
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    box-shadow: 0 6px 30px rgba(0,0,0,0.5);
+    border:1px solid rgba(255,255,255,0.03);
+  }
+
+  header{
+    display:flex;
+    gap:12px;
+    align-items:center;
+    margin-bottom:18px;
+  }
+  .logo{
+    width:54px;height:54px;border-radius:10px;
+    background:linear-gradient(135deg,var(--accent2),var(--accent1));
+    display:flex;align-items:center;justify-content:center;font-weight:800;color:#021;
+    box-shadow:0 6px 20px rgba(127,92,255,0.12), 0 6px 30px rgba(0,212,255,0.06);
+    font-size:18px;
+  }
+  h1{margin:0;font-size:20px}
+  p.lead{margin:0;color:var(--muted);font-size:13px}
+
+  .grid{
+    display:grid;
+    grid-template-columns: 1fr 380px;
+    gap:18px;
+    margin-top:16px;
+  }
+
+  /* form area */
+  .card{
+    background:var(--card);
+    padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);
+  }
+
+  label{display:block;color:var(--muted);font-size:13px;margin-bottom:6px}
+  input[type="date"], input[type="text"], textarea, select{
+    width:100%;
+    padding:10px 12px;
+    border-radius:8px;
+    background:var(--glass);
+    border:1px solid rgba(255,255,255,0.04);
+    color:var(--text);
+    outline:none;
+    font-size:14px;
+  }
+  .small{font-size:12px;color:var(--muted);margin-top:6px}
+
+  .row{display:flex;gap:10px}
+  .row .col{flex:1}
+
+  .btn{
+    display:inline-block;padding:10px 14px;border-radius:10px;
+    background:linear-gradient(90deg,var(--accent2),var(--accent1));
+    color:#021;font-weight:700;border:none;cursor:pointer;
+    box-shadow:0 8px 22px rgba(0,0,0,0.4);
+  }
+  .btn.ghost{background:transparent;color:var(--accent1);border:1px solid rgba(255,255,255,0.04)}
+  .btn.warn{background:linear-gradient(90deg,#ffd57a,#ff9a5b);color:#021}
+
+  .actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+  .muted{color:var(--muted);font-size:13px}
+
+  /* list area */
+  .list{
+    display:flex;flex-direction:column;gap:12px;
+    max-height:520px;overflow:auto;padding-right:6px;
+  }
+  .entry{
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02);
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+  }
+  .entry-left{display:flex;align-items:center;gap:12px}
+  .date{
+    min-width:110px;background:rgba(0,0,0,0.15);padding:8px 10px;border-radius:8px;text-align:center;font-weight:700;
+  }
+  .chips{display:flex;gap:8px;flex-wrap:wrap}
+  .chip{
+    padding:8px 10px;border-radius:10px;background:rgba(255,255,255,0.03);font-weight:700;min-width:44px;text-align:center;
+    box-shadow: inset 0 -6px 12px rgba(0,0,0,0.15);
+  }
+  .chip.special{background:linear-gradient(90deg,#ffd57a,#ff9a5b);color:#021}
+  .entry-right{display:flex;gap:8px;align-items:center}
+
+  .controls button{padding:8px 10px;border-radius:8px;border:none;background:rgba(255,255,255,0.03);color:var(--muted);cursor:pointer}
+  .controls button:hover{color:var(--text);background:rgba(255,255,255,0.05)}
+
+  .center{display:flex;align-items:center;justify-content:center;gap:8px}
+  .note{font-size:13px;color:var(--muted);margin-top:12px}
+  footer{margin-top:16px;color:var(--muted);font-size:13px;text-align:center}
+
+  /* responsive */
+  @media (max-width:920px){
+    .grid{grid-template-columns:1fr}
+    .list{max-height:380px}
+  }
+</style>
 </head>
 <body>
+  <div class="wrap">
+    <header>
+      <div class="logo">HK</div>
+      <div>
+        <h1>Keluaran Nomor — HK Loto</h1>
+        <p class="lead">Catat dan tampilkan hasil undian Hong Kong. Simpan di browser, ekspor CSV, atau salin cepat.</p>
+      </div>
+    </header>
 
-<header>
-    <img src="https://via.placeholder.com/150x50" alt="Hong Kong Lotto Logo">
-</header>
+    <div class="grid">
+      <!-- LEFT: form + tools -->
+      <div>
+        <div class="card">
+          <label for="drawDate">Tanggal Undian</label>
+          <input id="drawDate" type="date">
 
-<div class="content">
-    <div class="city-background"></div>
-    <h1>Winning Numbers</h1>
-    
-    <!-- Winning Numbers -->
-    <div class="winning-numbers">
-        <span>01</span>
-        <span>09</span>
-        <span>39</span>
-    </div>
-    
-    <!-- Draw Info -->
-    <div class="draw-info">
-        <p><strong>Latest Draw 4D</strong></p>
-        <p>Tuesday, 16 September 2025 | 23:00:00 (GMT +7)</p>
-    </div>
+          <label for="numbers" style="margin-top:10px">Nomor (pisahkan koma)</label>
+          <input id="numbers" type="text" placeholder="Contoh: 01, 05, 12, 23, 34, 45">
 
-    <!-- Input Section to Change Numbers -->
-    <div class="input-section">
-        <label for="num1">Number 1:</label>
-        <input type="number" id="num1" value="01">
-        <label for="num2">Number 2:</label>
-        <input type="number" id="num2" value="09">
-        <label for="num3">Number 3:</label>
-        <input type="number" id="num3" value="39">
-    </div>
+          <label for="note" style="margin-top:10px">Catatan / Keterangan (opsional)</label>
+          <input id="note" type="text" placeholder="Contoh: Malam / Siang / Special draw">
 
-    <!-- Input Section for Draw Date -->
-    <div class="input-section">
-        <label for="drawDate">Draw Date:</label>
-        <input type="date" id="drawDate" value="2025-09-16">
-    </div>
+          <div class="actions">
+            <button class="btn" id="addBtn">Tambah Hasil</button>
+            <button class="btn ghost" id="clearForm">Bersihkan</button>
+            <button class="btn warn" id="pasteBtn">Tempel dari Clipboard</button>
+          </div>
 
-    <!-- Icon Section (Billiards Icon) -->
-    <div class="text-center">
-        <i class="fas fa-billiards"></i>
-    </div>
+          <div style="margin-top:12px" class="muted">
+            Format nomor: angka (01..99) dipisah koma. Sistem akan menormalisasi leading zero.
+          </div>
+        </div>
 
-    <!-- Button to View All Past Draws -->
-    <div class="button">
-        <a href="#">View All Past Draws</a>
+        <div class="card" style="margin-top:12px;display:flex;flex-direction:column;gap:8px">
+          <div style="display:flex;gap:8px;align-items:center;justify-content:space-between">
+            <div><strong>Ekspor / Salin</strong></div>
+            <div class="muted">Data tersimpan: <span id="count">0</span></div>
+          </div>
+
+          <div style="display:flex;gap:8px;margin-top:6px">
+            <button class="btn" id="exportCsv">Ekspor CSV</button>
+            <button class="btn ghost" id="copyClipboard">Salin ke Clipboard</button>
+            <button class="btn ghost" id="importSample">Muat Sample</button>
+          </div>
+
+          <div class="note">
+            CSV akan berformat: date,numbers,remark
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: list -->
+      <div>
+        <div class="card">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <strong>Daftar Hasil</strong>
+            <div style="display:flex;gap:8px;align-items:center">
+              <button class="btn ghost" id="clearAll">Hapus Semua</button>
+            </div>
+          </div>
+
+          <div style="margin-top:10px" class="muted">Klik tombol edit (🖉) di tiap baris untuk mengubah entry.</div>
+
+          <div style="margin-top:12px" class="list" id="resultsList">
+            <!-- entries appended here -->
+          </div>
+        </div>
+
+        <footer>
+          <div style="margin-top:12px">Made with ❤️ — local client-only tool</div>
+        </footer>
+      </div>
     </div>
-</div>
+  </div>
 
 <script>
-    // Example for dynamically updating the winning numbers and draw date
-    const num1 = document.getElementById("num1");
-    const num2 = document.getElementById("num2");
-    const num3 = document.getElementById("num3");
-    const drawDate = document.getElementById("drawDate");
+(() => {
+  const addBtn = document.getElementById('addBtn');
+  const dateEl = document.getElementById('drawDate');
+  const numbersEl = document.getElementById('numbers');
+  const noteEl = document.getElementById('note');
+  const resultsList = document.getElementById('resultsList');
+  const countEl = document.getElementById('count');
+  const clearAllBtn = document.getElementById('clearAll');
+  const exportCsvBtn = document.getElementById('exportCsv');
+  const copyClipboardBtn = document.getElementById('copyClipboard');
+  const importSampleBtn = document.getElementById('importSample');
+  const clearFormBtn = document.getElementById('clearForm');
+  const pasteBtn = document.getElementById('pasteBtn');
 
-    // Update function
-    function updateDrawInfo() {
-        // Set the numbers dynamically
-        document.querySelectorAll(".winning-numbers span")[0].textContent = num1.value;
-        document.querySelectorAll(".winning-numbers span")[1].textContent = num2.value;
-        document.querySelectorAll(".winning-numbers span")[2].textContent = num3.value;
+  // storage key
+  const STORAGE_KEY = 'hk_loto_results_v1';
 
-        // Set the draw date dynamically
-        const dateText = new Date(drawDate.value).toLocaleDateString("en-GB", {
-            weekday: 'long',
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-        });
-        document.querySelector(".draw-info p").textContent = `Tuesday, ${dateText} | 23:00:00 (GMT +7)`;
+  // helper utils
+  function loadData() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : [];
+    } catch (e) {
+      console.error(e);
+      return [];
     }
+  }
+  function saveData(arr) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(arr));
+    renderList();
+  }
+  function normalizeNumberToken(tok){
+    if(!tok) return null;
+    const n = parseInt(tok,10);
+    if(Number.isNaN(n)) return null;
+    if(n < 0 || n > 99) return null; // batas
+    return n < 10 ? ('0' + n) : (''+n);
+  }
+  function parseNumbersInput(str){
+    // accept comma, space separated
+    const toks = str.split(/[,\s]+/).map(s=>s.trim()).filter(Boolean);
+    const nums = [];
+    for(const t of toks){
+      const v = normalizeNumberToken(t.replace(/^0+/, '')); // strip leading zeros then re-normalize
+      if(v === null) return null;
+      if(!nums.includes(v)) nums.push(v);
+    }
+    return nums;
+  }
 
-    // Event listeners to update on change
-    num1.addEventListener("input", updateDrawInfo);
-    num2.addEventListener("input", updateDrawInfo);
-    num3.addEventListener("input", updateDrawInfo);
-    drawDate.addEventListener("change", updateDrawInfo);
+  // render
+  function renderList(){
+    const data = loadData();
+    resultsList.innerHTML = '';
+    data.slice().reverse().forEach((entry, idx) => {
+      const i = data.length - 1 - idx; // original index
+      const el = document.createElement('div');
+      el.className = 'entry';
+      const left = document.createElement('div');
+      left.className = 'entry-left';
+      const dateBox = document.createElement('div');
+      dateBox.className = 'date';
+      dateBox.textContent = entry.date || '—';
+      left.appendChild(dateBox);
 
-    // Initialize with default values
-    updateDrawInfo();
+      const chips = document.createElement('div');
+      chips.className = 'chips';
+      (entry.numbers || []).forEach((num, j) => {
+        const chip = document.createElement('div');
+        chip.className = 'chip';
+        // mark special/single out if last number? we won't assume; user can mark via note
+        chip.textContent = num;
+        chips.appendChild(chip);
+      });
+      left.appendChild(chips);
+
+      const meta = document.createElement('div');
+      meta.style.marginLeft = '10px';
+      meta.style.color = 'var(--muted)';
+      meta.style.fontSize = '13px';
+      meta.innerHTML = entry.remark ? `<div>${entry.remark}</div>` : '';
+      left.appendChild(meta);
+
+      const right = document.createElement('div');
+      right.className = 'entry-right';
+
+      const controls = document.createElement('div');
+      controls.className = 'controls';
+
+      const editBtn = document.createElement('button');
+      editBtn.title = 'Edit';
+      editBtn.innerHTML = '🖉';
+      editBtn.onclick = ()=> editEntry(i);
+
+      const delBtn = document.createElement('button');
+      delBtn.title = 'Hapus';
+      delBtn.innerHTML = '🗑';
+      delBtn.onclick = ()=> {
+        if(!confirm('Hapus entry ini?')) return;
+        const arr = loadData();
+        arr.splice(i,1);
+        saveData(arr);
+      };
+
+      const copyBtn = document.createElement('button');
+      copyBtn.title = 'Salin angka';
+      copyBtn.innerHTML = '📋';
+      copyBtn.onclick = ()=> {
+        const text = `${entry.date} — ${entry.numbers.join(', ')} ${entry.remark ? ' — '+entry.remark : ''}`;
+        navigator.clipboard.writeText(text).then(()=> alert('Disalin ke clipboard'));
+      };
+
+      controls.appendChild(editBtn);
+      controls.appendChild(copyBtn);
+      controls.appendChild(delBtn);
+      right.appendChild(controls);
+
+      el.appendChild(left);
+      el.appendChild(right);
+
+      resultsList.appendChild(el);
+    });
+
+    countEl.textContent = loadData().length;
+  }
+
+  // actions
+  addBtn.addEventListener('click', ()=>{
+    const date = dateEl.value;
+    const numsRaw = numbersEl.value.trim();
+    const remark = noteEl.value.trim();
+    if(!date){
+      alert('Pilih tanggal undian terlebih dahulu!');
+      return;
+    }
+    if(!numsRaw){
+      alert('Masukkan minimal satu nomor!');
+      return;
+    }
+    const nums = parseNumbersInput(numsRaw);
+    if(!nums || nums.length === 0){
+      alert('Format nomor salah. Gunakan angka 0–99, pisahkan dengan koma/spasi.');
+      return;
+    }
+    // build entry
+    const arr = loadData();
+    arr.push({ date, numbers: nums, remark });
+    saveData(arr);
+    // clear inputs
+    numbersEl.value = '';
+    noteEl.value = '';
+    // optional: keep date for next entry
+  });
+
+  clearFormBtn.addEventListener('click', ()=>{
+    dateEl.value = '';
+    numbersEl.value = '';
+    noteEl.value = '';
+  });
+
+  pasteBtn.addEventListener('click', async ()=>{
+    try{
+      const text = await navigator.clipboard.readText();
+      if(!text) { alert('Clipboard kosong'); return; }
+      // try to extract numbers from clipboard text
+      // find date pattern
+      const maybeDate = text.match(/\d{4}-\d{2}-\d{2}/);
+      if(maybeDate) dateEl.value = maybeDate[0];
+      // find numbers
+      const nums = text.match(/\d{1,2}/g);
+      if(nums && nums.length){
+        numbersEl.value = nums.join(', ');
+      } else {
+        numbersEl.value = text;
+      }
+      alert('Isi ditempel dari clipboard ke form (periksa sebelum tambah).');
+    }catch(e){
+      alert('Gagal membaca clipboard: ' + e.message);
+    }
+  });
+
+  clearAllBtn.addEventListener('click', ()=>{
+    if(!confirm('Hapus semua hasil? Tindakan ini tidak bisa di-undo.')) return;
+    localStorage.removeItem(STORAGE_KEY);
+    renderList();
+  });
+
+  exportCsvBtn.addEventListener('click', ()=>{
+    const data = loadData();
+    if(!data.length){ alert('Tidak ada data untuk diekspor'); return; }
+    const rows = data.map(d => `${d.date},"${d.numbers.join(' ')}","${(d.remark||'')}"`);
+    const csv = 'date,numbers,remark\n' + rows.join('\n');
+    const blob = new Blob([csv], { type: 'text/csv' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'hk-loto-results.csv';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+  });
+
+  copyClipboardBtn.addEventListener('click', async ()=>{
+    const data = loadData();
+    if(!data.length){ alert('Tidak ada data untuk disalin'); return; }
+    const lines = data.map(d => `${d.date} — ${d.numbers.join(', ')}${d.remark ? ' — '+d.remark : ''}`);
+    try {
+      await navigator.clipboard.writeText(lines.join('\\n'));
+      alert('Hasil disalin ke clipboard');
+    } catch(e){
+      alert('Gagal menyalin: ' + e.message);
+    }
+  });
+
+  importSampleBtn.addEventListener('click', ()=>{
+    const sample = [
+      { date: todayOffset(-2), numbers: ['03','12','25','28','33','44'], remark: 'Malem' },
+      { date: todayOffset(-1), numbers: ['01','05','11','20','31','46'], remark: 'Siang' },
+      { date: todayOffset(0), numbers: ['02','09','13','22','35','48'], remark: 'Special' }
+    ];
+    saveData(sample);
+    alert('Sample dimuat');
+  });
+
+  function todayOffset(offset=0){
+    const d = new Date(); d.setDate(d.getDate()+offset);
+    return d.toISOString().slice(0,10);
+  }
+
+  // edit
+  function editEntry(index){
+    const arr = loadData();
+    const e = arr[index];
+    if(!e) return;
+    // populate form with entry and remove it (user will re-add after edit)
+    if(!confirm('Edit entry: data akan dimuat ke form. Simpan setelah selesai (entry akan dihapus secara sementara).')) return;
+    dateEl.value = e.date || '';
+    numbersEl.value = (e.numbers||[]).join(', ');
+    noteEl.value = e.remark || '';
+    arr.splice(index,1);
+    saveData(arr);
+  }
+
+  // initial render
+  renderList();
+
+  // expose for debugging (optional)
+  window.hkLoto = { loadData, saveData, parseNumbersInput };
+
+})();
 </script>
-
 </body>
 </html>
