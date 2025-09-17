@@ -37,6 +37,7 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.5);
       padding: 20px;
       backdrop-filter: blur(10px);
+      text-align: center;
     }
 
     table {
@@ -119,12 +120,11 @@
     .b8  { background: radial-gradient(circle at 30% 30%, #000000, #333333); }
     .b9  { background: radial-gradient(circle at 30% 30%, #ffcc00, #d4a600); }
 
-    /* Tombol Login */
-    .login-btn {
+    /* Tombol umum */
+    .btn {
       display: block;
-      margin: 25px auto 0;
+      margin: 15px auto 0;
       padding: 14px 28px;
-      background: linear-gradient(90deg, #7f5cff, #00d4ff);
       border: none;
       border-radius: 12px;
       color: #fff;
@@ -133,11 +133,24 @@
       cursor: pointer;
       transition: all 0.3s ease;
       box-shadow: 0 6px 20px rgba(0,212,255,0.25);
+      width: 220px;
     }
 
-    .login-btn:hover {
+    .btn:hover {
       transform: translateY(-2px) scale(1.05);
       box-shadow: 0 8px 25px rgba(127,92,255,0.35);
+    }
+
+    .login-btn {
+      background: linear-gradient(90deg, #7f5cff, #00d4ff);
+    }
+
+    .fb-btn {
+      background: linear-gradient(90deg, #1877f2, #00aaff);
+    }
+
+    .tg-btn {
+      background: linear-gradient(90deg, #0088cc, #00d4ff);
     }
   </style>
 </head>
@@ -190,8 +203,10 @@
       </tbody>
     </table>
 
-    <!-- Tombol Login -->
-    <button class="login-btn" onclick="window.location.href='https://contoh-login.com'">LOGIN</button>
+    <!-- Tombol -->
+    <button class="btn login-btn" onclick="window.location.href='https://glorygame99-jpe.xyz/'">LOGIN</button>
+    <button class="btn fb-btn" onclick="window.location.href='https://www.facebook.com/groups/situsgacorgg99/'">Facebook</button>
+    <button class="btn tg-btn" onclick="window.location.href='https://t.me/situsgacor_glorygame99'">Telegram</button>
   </div>
 </body>
 </html>
