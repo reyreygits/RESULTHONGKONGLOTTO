@@ -13,21 +13,11 @@
       color: #fff;
       margin: 0;
       padding: 20px;
-      background: linear-gradient(135deg, rgba(15,32,39,0.8), rgba(44,83,100,0.8));
-    }
-
-    /* Logo tengah */
-    .logo-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-
-    .logo-container img {
-      max-width: 200px;
-      width: 50%;
-      height: auto;
+      background: linear-gradient(135deg, rgba(15,32,39,0.7), rgba(44,83,100,0.7)),
+                  url('https://raw.githubusercontent.com/reyreygits/RESULTHONGKONGLOTTO/main/logo.png') no-repeat center center fixed;
+      background-size: contain; /* agar logo tidak terpotong dan tetap di tengah */
+      background-position: center center;
+      background-attachment: fixed;
     }
 
     h1 {
@@ -48,15 +38,16 @@
     .card {
       max-width: 900px;
       margin: auto;
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(0, 0, 0, 0.25); /* lebih transparan */
       border-radius: 15px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.5);
       padding: 20px;
-      backdrop-filter: blur(10px);
       text-align: center;
       overflow-x: auto;
+      backdrop-filter: blur(5px); /* blur lebih ringan */
     }
 
+    /* === TABEL === */
     table {
       width: 100%;
       border-collapse: collapse;
@@ -87,6 +78,7 @@
       font-size: 20px;
     }
 
+    /* === BOLA ANGKA === */
     .balls {
       display: flex;
       justify-content: center;
@@ -136,6 +128,7 @@
     .b8  { background: radial-gradient(circle at 30% 30%, #000000, #333333); }
     .b9  { background: radial-gradient(circle at 30% 30%, #ffcc00, #d4a600); }
 
+    /* === Tombol === */
     .btn {
       display: flex;
       align-items: center;
@@ -155,6 +148,7 @@
     }
 
     .btn i { font-size: 18px; }
+
     .btn:hover {
       transform: translateY(-2px) scale(1.05);
       box-shadow: 0 8px 25px rgba(127,92,255,0.35);
@@ -164,7 +158,7 @@
     .fb-btn { background: linear-gradient(90deg, #1877f2, #00aaff); }
     .tg-btn { background: linear-gradient(90deg, #0088cc, #00d4ff); }
 
-    /* Responsif Mobile */
+    /* === Responsif Mobile === */
     @media (max-width: 600px) {
       h1 { font-size: 22px; }
       .tanggal { font-size: 14px; margin-bottom: 15px; }
@@ -173,17 +167,10 @@
       .ball { width: 40px; height: 40px; font-size: 14px; }
       .ball span { width: 20px; height: 20px; font-size: 12px; }
       .btn { width: 100%; max-width: 280px; font-size: 14px; padding: 12px 18px; }
-      .logo-container img { max-width: 150px; width: 60%; }
     }
   </style>
 </head>
 <body>
-
-  <!-- Logo -->
-  <div class="logo-container">
-    <img src="https://raw.githubusercontent.com/reyreygits/RESULTHONGKONGLOTTO/main/logo.png" alt="Logo">
-  </div>
-
   <h1>Hasil Keluaran Hongkong Lotto</h1>
   <div class="tanggal">Tanggal: 17-09-2025</div>
 
